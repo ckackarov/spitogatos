@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-primary;
+  }
+
+  .form {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .input-container {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 28px 10px 28px;
+    border: 1px solid #000000;
+    border-radius: 28px;
+  }
+
+  .error {
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    text-align: right;
+    display: none;
+  }
+
+  input:valid {
+    border: 2px solid blue;
+  }
+
+  input:invalid[focused="true"] ~ span.error {
+    display: block;
+    border-color: #000000;
+  }
+
+  input:invalid[focused="true"] {
+    border: 1px solid #ff1a00;
+  }
+
+  .image-scale {
+    object-position: 64% 20%;
+  }
+
+  .green-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+    background-color: #b4ff00;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  .green-dot-clicked {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+    width: 456px;
+    height: 456px;
+    background-color: #b4ff00;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+  }
+
+  a .green-dot-social {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social {
+    color: #000000;
+  }
+
+  a .menu-social {
+    color: #fff;
+    fill: #fff;
+  }
+
+  .grid-container-md {
+    display: grid;
+    grid-template-rows: 70px 250px 10px 30px 335px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+  }
+
+  .grid-container-xl {
+    grid-template-rows: 144px 368px 96px 424px 216px;
+    grid-template-columns: 252px 241px 455px 144px 456px 372px;
+    grid-column-gap: 0px;
+    place-content: center;
+  }
+
+  .image-xl-1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .text-xl-1 {
+    grid-row: 2;
+    grid-column: 5;
+    margin-top: 24px;
+  }
+
+  .image-xl-2 {
+    grid-row: 4;
+    grid-column: 5;
+    place-self: center;
+    width: 100%;
+  }
+
+  .text-xl-2 {
+    grid-row: 4;
+    grid-column: 3;
+  }
+
+  .image-md-1 {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    place-self: end;
+  }
+
+  .text-md-1 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+
+  .image-md-2 {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    place-self: start;
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .text-md-2 {
+    grid-row-start: 5;
+    place-content: center;
+  }
+
+  .bgLayout1 {
+    background-image: linear-gradient(180deg, #ffffff00 0%, #000000 100%);
+  }
+
+  .bgLayout2 {
+    background-image: linear-gradient(270deg, #ffffff00 0%, #000000 120%);
+  }
+
+  .btn {
+    @apply px-[44px] py-[13px] mt-[33px] lg:mt-[40px] bg-btn text-text_white font-bold font-primary w-fit rounded-[42px] lg:px-[88px] lg:py-[17px];
+  }
+
+  .btn-hover:hover {
+    background-color: #fff;
+    outline: 1px solid #4b00ff;
+    color: #4b00ff;
+    transition: all 0.3s ease-out;
+    box-shadow: 0px 8px 15px #00000066;
+  }
+
+  .btn-active:active {
+    transform: scale(0.98);
+    box-shadow: none;
+    box-shadow: 0px 3px 6px #00000047 inset;
+  }
+
+  .greenLine {
+    @apply after:content-[''] after:absolute
+    after:-bottom-[8px] after:left-0 after:w-[48px] lg:after:w-[96px] after:h-2  after:bg-light_green;
+  }
+
+  .btnShadow {
+    box-shadow: 0px 3px 6px #00000066;
+  }
+
+  .heroTitle {
+    @apply text-[38px] md:text-[60px] lg:text-[100px]  text-text_white  font-primary font-extrabold transition-all;
+  }
+
+  .heroText {
+    @apply text-[18px] md:text-[20px]  lg:text-[24px]  text-text_white  font-primary font-bold transition-all;
+  }
+
+  .subTitle {
+    @apply text-[14px] md:text-[15px] lg:text-[16px] text-subTitle  font-primary font-bold transition-all;
+  }
+
+  .title {
+    @apply text-[28px] md:text-[30px] lg:text-[32px]  font-primary font-extrabold transition-all;
+  }
+
+  .mainText {
+    @apply text-[16px] md:text-[16px] lg:text-[18] md:mt-[] font-primary font-normal transition-all;
+  }
+}
